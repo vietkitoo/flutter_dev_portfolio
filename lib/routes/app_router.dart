@@ -1,7 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dev_portfolio/home/home.dart';
+import 'package:flutter_dev_portfolio/feature/about_me/about_me_screen.dart';
 import 'package:flutter_dev_portfolio/splash/splash_screen.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_dev_portfolio/feature/menu/menu_screen.dart';
 
 import '../home/bloc/home_cubit.dart';
 
@@ -23,10 +25,22 @@ final GoRouter appRouter = GoRouter(
         );
       },
     ),
+    GoRoute(
+      path: '/about-me',
+      name: RouteList.aboutMe,
+      builder: (context, state) => const AboutMeScreen(),
+    ),
+    GoRoute(
+      path: '/menu', 
+      name: RouteList.menu, 
+      builder: (context, state) => const MenuScreen(),
+    ),
   ],
 );
 
 class RouteList {
   static const splash = 'splash';
   static const home = 'home';
+  static const aboutMe = 'about-me';
+  static const menu = 'menu';
 }

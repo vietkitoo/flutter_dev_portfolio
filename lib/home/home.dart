@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dev_portfolio/feature/about_me/about_me_screen.dart';
+import 'package:flutter_dev_portfolio/feature/menu/menu_screen.dart';
 import 'package:flutter_dev_portfolio/home/bloc/home_cubit.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,9 +23,9 @@ class HomeScreenView extends StatefulWidget {
 class _HomeScreenViewState extends State<HomeScreenView> {
   final PageController _pageController = PageController();
 
-  final List<Widget> _pages = const [
-    Center(child: Text('List')),
-    Center(child: Text('About Me')),
+  final List<Widget> _pages = [
+    MenuScreen(),
+    AboutMeScreen(),
   ];
 
   @override
@@ -45,17 +47,17 @@ class _HomeScreenViewState extends State<HomeScreenView> {
               context.read<HomeScreenCubit>().onTapBottomNav(index);
               _pageController.jumpToPage(index);
             },
-            selectedItemColor: Colors.red,
+            selectedItemColor: Colors.blueAccent,
             selectedFontSize: 16,
             unselectedItemColor: Colors.black54,
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.grid_view),
-                label: 'Danh sách',
+                label: 'Menu',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.person),
-                label: 'Sơ lược',
+                label: 'About Me',
               ),
             ],
           ),
