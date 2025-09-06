@@ -16,37 +16,18 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
     return Scaffold(
       backgroundColor: Colors.grey[50],
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(screenWidth * 0.05), // 5% của screen width
+        padding: EdgeInsets.all(screenWidth * 0.05),
         child: Column(
           children: [
             SizedBox(height: screenHeight * 0.05),
-            
-            // Avatar Section
             _buildAvatarSection(screenWidth),
-            
             SizedBox(height: screenHeight * 0.04),
-            
-            // Name and Title
             _buildNameSection(screenWidth),
-            
             SizedBox(height: screenHeight * 0.025),
-            
-            // Bio Section
             _buildBioSection(screenWidth),
-            
             SizedBox(height: screenHeight * 0.04),
-            
-            // Skills Section
-            // _buildSkillsSection(screenWidth),
-            
-            // SizedBox(height: screenHeight * 0.04),
-            
-            // Contact Section
             _buildContactSection(screenWidth),
-            
             SizedBox(height: screenHeight * 0.04),
-            
-            // Experience Section
             _buildExperienceSection(screenWidth),
           ],
         ),
@@ -93,7 +74,7 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
         Text(
           'Nguyễn Văn Quốc Việt',
           style: TextStyle(
-            fontSize: screenWidth * 0.075, // 7.5% của screen width
+            fontSize: screenWidth * 0.075,
             fontWeight: FontWeight.bold,
             color: Colors.black87,
           ),
@@ -102,7 +83,7 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
         Text(
           'Mobile Developer',
           style: TextStyle(
-            fontSize: screenWidth * 0.048, // 4.8% của screen width
+            fontSize: screenWidth * 0.048,
             color: Colors.blueAccent,
             fontWeight: FontWeight.w500,
           ),
@@ -114,7 +95,7 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
 
   Widget _buildBioSection(double screenWidth) {
     return Container(
-      padding: EdgeInsets.all(screenWidth * 0.053), // 5.3% của screen width
+      padding: EdgeInsets.all(screenWidth * 0.053),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),
@@ -146,89 +127,6 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
               height: 1.5,
             ),
             textAlign: TextAlign.center,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSkillsSection(double screenWidth) {
-    final skills = [
-      {'name': 'Flutter', 'level': 0.9},
-      {'name': 'Dart', 'level': 0.85},
-      {'name': 'Android', 'level': 0.8},
-      {'name': 'Kotlin', 'level': 0.75},
-      {'name': 'Java', 'level': 0.7},
-      {'name': 'Firebase', 'level': 0.8},
-    ];
-
-    return Container(
-      padding: EdgeInsets.all(screenWidth * 0.053),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 5),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Kỹ năng',
-            style: TextStyle(
-              fontSize: screenWidth * 0.048,
-              fontWeight: FontWeight.bold,
-              color: Colors.black87,
-            ),
-          ),
-          SizedBox(height: screenWidth * 0.04),
-          ...skills.map((skill) => _buildSkillItem(
-            skill['name'] as String,
-            skill['level'] as double,
-            screenWidth,
-          )).toList(),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSkillItem(String name, double level, double screenWidth) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: screenWidth * 0.032),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                name,
-                style: TextStyle(
-                  fontSize: screenWidth * 0.037,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black87,
-                ),
-              ),
-              Text(
-                '${(level * 100).toInt()}%',
-                style: TextStyle(
-                  fontSize: screenWidth * 0.032,
-                  color: Colors.grey[600],
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: screenWidth * 0.01),
-          LinearProgressIndicator(
-            value: level,
-            backgroundColor: Colors.grey[200],
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.blueAccent),
-            minHeight: 6,
           ),
         ],
       ),

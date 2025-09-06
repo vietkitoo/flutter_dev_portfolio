@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_dev_portfolio/feature/about_me/about_me_screen.dart';
-import 'package:flutter_dev_portfolio/feature/menu/menu_screen.dart';
-import 'package:flutter_dev_portfolio/home/bloc/home_cubit.dart';
+import 'package:flutter_dev_portfolio/src/features/about_me/about_me_screen.dart';
+import 'package:flutter_dev_portfolio/src/features/home/bloc/home_cubit.dart';
+import 'package:flutter_dev_portfolio/src/features/menu/menu_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

@@ -1,11 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_dev_portfolio/home/home.dart';
-import 'package:flutter_dev_portfolio/feature/about_me/about_me_screen.dart';
-import 'package:flutter_dev_portfolio/splash/splash_screen.dart';
+import 'package:flutter_dev_portfolio/src/features/home/home.dart';
+import 'package:flutter_dev_portfolio/src/features/about_me/about_me_screen.dart';
+import 'package:flutter_dev_portfolio/src/features/splash/splash_screen.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_dev_portfolio/feature/menu/menu_screen.dart';
+import 'package:flutter_dev_portfolio/src/features/menu/menu_screen.dart';
 
-import '../home/bloc/home_cubit.dart';
+import '../features/home/bloc/home_cubit.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: '/',
