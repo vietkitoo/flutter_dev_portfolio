@@ -220,7 +220,7 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
           ),
           SizedBox(height: screenWidth * 0.04),
           _buildExperienceItem(
-            'Senior Mobile Developer',
+            'Mobile Developer',
             'Công ty Tài chính TNHH Ngân hàng Việt Nam Thịnh Vượng SMBC',
             '1/2024 - Hiện tại',
             'Phát triển ứng dụng Financial với Flutter cho iOS và Android',
