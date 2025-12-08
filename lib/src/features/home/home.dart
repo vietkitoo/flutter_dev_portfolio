@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dev_portfolio/src/features/about_me/about_me_screen.dart';
@@ -43,9 +44,25 @@ class _HomeScreenViewState extends State<HomeScreenView> {
           ),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: state.selectedIndex,
-            onTap: (index) {
+            onTap: (index) async {
               context.read<HomeScreenCubit>().onTapBottomNav(index);
               _pageController.jumpToPage(index);
+              FirebaseAnalytics.instance.logEvent(
+                name: 'portfolio_app_open',
+              );
+              await FirebaseAnalytics.instance
+                  .logBeginCheckout(
+                  value: 10.0,
+                  currency: 'USD',
+                  items: [
+                    AnalyticsEventItem(
+                        itemName: 'Socks',
+                        itemId: 'xjw73ndnw',
+                        price: 10.0,
+                    ),
+                  ],
+                  coupon: '10PERCENTOFF',
+              );
             },
             selectedItemColor: Colors.blueAccent,
             selectedFontSize: 16,
